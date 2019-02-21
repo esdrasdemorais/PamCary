@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 177%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em !important;
+}
+body, input[text], button {
+  color: #000;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #000;
+  border: 1px solid #000;
+  padding: 5px 10px;
+  border-radius: 17px !important;
+  cursor: pointer;
+  cursor: hand;
+  color: #fff;
+}
+button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #000 !important;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #fff !important;
+}
+nav a:hover {
+  color: #000;
+  background-color: #fff;
+}
+nav a.active {
+  color: #ddd;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.textarea {
+	
+}

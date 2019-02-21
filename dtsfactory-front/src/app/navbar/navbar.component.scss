@@ -1,0 +1,10 @@
+li.nav-item {
+	cursor: pointer;
+}
+li.nav-item:hover {
+	border-bottom: 1px dotted #000;
+}
+li.nav-item selected {
+	color: #777;
+	border-bottom: 1px solid #000;
+}

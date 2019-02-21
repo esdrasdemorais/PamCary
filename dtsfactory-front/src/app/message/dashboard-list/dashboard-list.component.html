@@ -1,0 +1,14 @@
+<div id="messages">
+	<!-- <h5>Messages</h5> -->
+	<ul class="messages">
+	  <li *ngFor="let message of messages"
+	    [class.selected]="message === selectedMessage"
+	    (click)="onSelect(message)">
+	    <div class="badge">{{message.title}}</div>
+	    <div>{{message.createdAt | date: 'dd/MM/yyy hh:mm'}}</div>
+	  </li>
+	</ul>
+</div>
+<div id="message-detail">
+	<app-dashboard-detail [message]="selectedMessage"></app-dashboard-detail>
+</div>

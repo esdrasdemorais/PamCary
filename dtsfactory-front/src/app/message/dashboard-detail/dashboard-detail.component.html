@@ -1,0 +1,18 @@
+<div id="message">
+  <div *ngIf="message">
+	  <h4>{{message.title | uppercase}}</h4>
+	  <div>
+	  	<span>Hora: </span>{{message.createdAt | date: 'dd/MM/yyy hh:mm'}}
+	  	<br>
+	    {{message.subject}}
+	  </div>
+	  <div class="textarea">
+	      <textarea ng-model="message.body" placeholder="mensagem">
+	      	{{message.body}}
+	      </textarea>
+	  </div>
+	  <div>
+	  	<button (click)="remove(message)">Excluir Mensagem</button>
+	  </div>
+  </div>
+</div>
