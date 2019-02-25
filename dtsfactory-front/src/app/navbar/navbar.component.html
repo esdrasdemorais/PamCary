@@ -1,5 +1,16 @@
-<nav class="navbar navbar-expand">
-   <!--  <div class="navbar-header">
+<mat-nav-list>
+  <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+      <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
+  </a>
+  <a *ngFor="let menu of menus" mat-list-item 
+  	routerLink="{{menu.path}}" (click)="onSidenavClose()"
+  >
+      <mat-icon>{{menu.icon}}</mat-icon>
+      <span class="nav-caption">{{menu.name}}</span>
+  </a>
+</mat-nav-list>
+<!-- <nav class="navbar navbar-expand">
+   <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarText">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -8,7 +19,7 @@
       <a class="navbar-brand brand-custom" routerLink="/home">
     	Home
       </a>
-    </div> -->
+    </div>
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="nav navbar-nav">
             <li *ngFor="let menu of menus"
@@ -27,4 +38,40 @@
     		</li>
         </ul>
     </div>
-</nav>
+</nav> -->
+<!-- <app-layout> -->
+  <mat-sidenav-container>
+    <mat-sidenav #sidenavs role="navigation">
+      <!--this is a place for us to add side-nav code-->
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!--in here all the content must reside. We will add a navigation header as well-->
+      <!-- <main>
+        <router-outlet></router-outlet>
+      </main> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+<!-- </app-layout> -->
+<!-- 
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+      <button mat-icon-button (click)="onToggleSidenav()">
+          <mat-icon>Menu</mat-icon>
+      </button>
+  </div>
+  <div>
+      <a routerLink="/home">Home</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+      <ul fxLayout fxLayoutGap="17px" class="navigation-items">
+      	  <li *ngFor="let menu of menus"
+           	  [class.selected]="menu === selectedMenu"
+   			  (click)="onSelect(menu)"
+    	  >
+    	      <a routerLink="{{menu.path}}">
+  			  	  {{menu.name}}
+			  </a>
+          </li>
+      </ul>
+  </div>
+</mat-toolbar> -->

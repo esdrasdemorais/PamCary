@@ -1,4 +1,16 @@
-<div id="container">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <app-navbar (sidenavClose)="sidenav.close()"></app-navbar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <!--in here all the content must reside. We will add a navigation header as well-->
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- <div id="container">
 	<div id="header">
 		<app-header></app-header>
 	</div>
@@ -10,4 +22,4 @@
 	<div id="footer">
 		<app-footer></app-footer>
 	</div>
-</div>
+</div> -->

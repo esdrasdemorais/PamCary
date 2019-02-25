@@ -16,18 +16,18 @@ import { FooterComponent } from './footer/footer.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-    MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule,
-    MatListModule,
-    MatSelectModule, MatSidenavModule,
-    MatToolbarModule
+    MatButtonModule, MatCardModule, MatFormFieldModule, 
+    MatGridListModule, MatIconModule, MatInputModule,
+    MatListModule, MatSelectModule, MatSidenavModule,
+    MatToolbarModule, MatCheckboxModule, MatTabsModule
   }
     from
   '@angular/material';
-//import {MatToolbarModule} from '@angular/material/toolbar';
+import 'hammerjs';
+import { NgxMaskModule } from './ngx-mask/ngx-mask.module';
+import {FlexLayoutModule} from '@angular/flex-layout';
 //import {MatTabsModule} from '@angular/material/tabs';
 
-import { NgxMaskModule } from './ngx-mask/ngx-mask.module';
-    
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,11 +54,19 @@ import { NgxMaskModule } from './ngx-mask/ngx-mask.module';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    NgxMaskModule.forRoot()
-//    MatToolbarModule,
-//    MatTabsModule,
-//    NgxMaskModule.forRoot()
+    MatCheckboxModule,
+    NgxMaskModule.forRoot(),
+    MatTabsModule,
+    FlexLayoutModule
   ],
+  exports: [
+    MatTabsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule, 
+    MatButtonModule,
+    MatListModule
+  ],  
   providers: [],
   bootstrap: [AppComponent]
 })

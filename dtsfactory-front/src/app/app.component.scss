@@ -14,7 +14,7 @@ div#header {
 div#painel {
 	float:left;
 	width: 100%;
-	margin: 17px 0;
+	margin: 17px 0 7px 17px;
 	min-height: 447px;
 }
 div#footer {
@@ -22,4 +22,22 @@ div#footer {
 	border: 1px solid #000;
 	text-align: center;
 	font: 10px Verdana;
+}
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+mat-sidenav {
+    width: 250px;
+}
+main {
+    padding: 10px;
+}
+	
+.layout-wrapper{
+    height: 100%;
+}
+ 
+.flex-wrapper{
+    height: 100%;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Menu } from '../menu';
 import { MENU_ITEMS } from '../menu-mock';
 
@@ -8,7 +8,10 @@ import { MENU_ITEMS } from '../menu-mock';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+    
+  //@Output() public sidenavToggle = new EventEmitter();
+  @Output() sidenavClose = new EventEmitter();
+    
   menus = MENU_ITEMS;
   
   selectedMenu: Menu;
@@ -22,4 +25,12 @@ export class NavbarComponent implements OnInit {
   onSelect(menu: Menu): void {
       this.selectedMenu = menu;
   }
+  
+  public onSidenavClose = () => {
+      this.sidenavClose.emit();
+  }
+  
+//  public onToggleSidenav = () => {
+//      this.sidenavToggle.emit();
+//  }
 }

@@ -1,2 +1,24 @@
-<app-date-pipe style="margin-left: 20px;"></app-date-pipe>
-<app-navbar></app-navbar>
+<!-- <app-navbar (sidenavToggle)="sidenav.toggle()"></app-navbar> -->
+<!-- <app-date-pipe style="margin-left: 20px;"></app-date-pipe> -->
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+      <button mat-icon-button (click)="onToggleSidenav()">
+          <mat-icon>menu</mat-icon>
+      </button>
+  </div>
+  <div>
+      <a routerLink="/home">Home</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+      <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+          <li *ngFor="let menu of menus"
+           	  [class.selected]="menu === selectedMenu"
+   			  (click)="onSelect(menu)"
+    	  >
+    	      <a routerLink="{{menu.path}}">
+  			  	  {{menu.name}}
+			  </a>
+          </li>
+      </ul>
+  </div>
+</mat-toolbar>
