@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -10,7 +11,7 @@ h2, h3 {
   font-weight: lighter;
 }
 body {
-  margin: 2em !important;
+  margin: 7px !important;
 }
 body, input[text], button {
   color: #000;
@@ -20,7 +21,7 @@ a {
   cursor: pointer;
   cursor: hand;
 }
-button {
+/*button {
   font-family: Arial;
   background-color: #000;
   border: 1px solid #000;
@@ -39,7 +40,7 @@ button:disabled {
   background-color: #eee;
   color: #aaa;
   cursor: auto;
-}
+}*/
 
 /* Navigation link styles */
 nav a {
@@ -48,18 +49,18 @@ nav a {
   margin-right: 10px;
   margin-top: 10px;
   display: inline-block;
-  background-color: #000 !important;
+  /*background-color: #000 !important;*/
   border-radius: 4px;
 }
 nav a:visited, a:link {
-  color: #fff !important;
+  /*color: #fff !important;*/
 }
 nav a:hover {
-  color: #000;
-  background-color: #fff;
+  /*color: #000;
+  background-color: #fff;*/
 }
 nav a.active {
-  color: #ddd;
+  /*color: #ddd;*/
 }
 
 /* everywhere else */

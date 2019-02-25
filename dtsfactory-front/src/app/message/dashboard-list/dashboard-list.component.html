@@ -10,5 +10,7 @@
 	</ul>
 </div>
 <div id="message-detail">
-	<app-dashboard-detail [message]="selectedMessage"></app-dashboard-detail>
+	<app-dashboard-detail [message]="selectedMessage"
+		(getMessages)="refreshMessages($event)">
+	</app-dashboard-detail>
 </div>

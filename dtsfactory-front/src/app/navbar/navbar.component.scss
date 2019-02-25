@@ -4,7 +4,11 @@ li.nav-item {
 li.nav-item:hover {
 	border-bottom: 1px dotted #000;
 }
-li.nav-item selected {
+.selected {
 	color: #777;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #777;
+}
+mat-sidenav {
+    display: flex;
+    overflow: visible;
 }

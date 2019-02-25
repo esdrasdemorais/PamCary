@@ -5,7 +5,9 @@
                 <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <input type="text" formControlName="name" 
-                        	class="form-control" placeholder="Nome"
+                        	mask="S{17}" min="7"
+                        	class="form-control" placeholder="Nome" 
+                        	[patterns]="customPatterns"
                         	[ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                         <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
                             <div *ngIf="f.name.errors.required">Nome obrigat&oacute;rio</div>
@@ -21,24 +23,45 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" formControlName="phone" 
-                        	class="form-control" placeholder="Fone"
+                        <input formControlName="phone" type="text"
+                        	class="form-control" placeholder="Fone" 
+                        	mask="(00) 0000-0000" [showMaskTyped]="false" 
                         	[ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
-                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <!-- <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                             <div *ngIf="f.phone.errors.required">Fone obrigat&oacute;rio</div>
-                        </div>
+                        </div>-->
                     </div>
+                    <!-- <div class="flex-row">
+		                <div class="flex-cell-padding">
+		                  <mat-form-field>
+		                    <input matInput placeholder="Fone" 
+		                    	mask="(00) 0000-0000" 
+		                    	formControlName="phone">prefix="+55" 
+		                    <mat-hint><b>Mask: </b>(00) 0000-0000</mat-hint>
+		                  </mat-form-field>
+						</div>
+					</div> -->
                     <div class="form-group">
                         <select formControlName="subject" 
-                        	class="form-control" placeholder="Assunto"
+                        	class="form-control"
                         	[ngClass]="{ 'is-invalid': submitted && f.subject.errors }"
                         >
+                        	<option value="">Assunto</option>
                         	<option *ngFor="let subject of subjects" 
-                        		value="{{subject}}">
+                        		value="{{subject.name}}">
+                        			{{subject.name}}
                         	</option>
                         </select>
                         <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
                             <div *ngIf="f.subject.errors.required">Assunto obrigat&oacute;rio</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="title"
+                        	class="form-control" placeholder="Titulo"
+                        	[ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                            <div *ngIf="f.title.errors.required">Titulo obrigat&oacute;rio</div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -51,8 +74,9 @@
                         </div>
                         <div style="text-align: right">{{f.body.value.length}}/500</div>
                     </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary">ENVIAR</button>
+                    <div class="form-group" style="margin-bottom: 0 !important">
+                        <button class="btn btn-primary" 
+                        	[disabled]="messageForm.invalid">ENVIAR</button>
                     </div>
                 </form>
             </div>

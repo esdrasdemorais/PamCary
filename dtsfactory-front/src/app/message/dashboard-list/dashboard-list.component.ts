@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '../../message';
-import { MESSAGES } from '../../message-mock';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-dashboard-list',
@@ -8,17 +8,26 @@ import { MESSAGES } from '../../message-mock';
   styleUrls: ['./dashboard-list.component.scss']
 })
 export class DashboardListComponent implements OnInit {
+  messages: Array<Message> = [];
 
-  messages = MESSAGES;
-  
   selectedMessage: Message;
     
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+      this.getMessages();
   }
 
   onSelect(message: Message): void {
       this.selectedMessage = message;
+  }
+  
+  getMessages() {
+      this.messages = this.apiService.getMessages();
+  }
+  
+  refreshMessages(event) {
+      let messages: Array<Message> = event;
+      this.messages = messages;
   }
 }

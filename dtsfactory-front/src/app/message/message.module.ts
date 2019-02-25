@@ -8,6 +8,8 @@ import { MessageComponent } from './message.component';
 
 import { MessageRoutingModule } from './message-routing-module';
 
+import { NgxMaskModule } from '../ngx-mask/ngx-mask.module';
+
 @NgModule({
   declarations: [
     DashboardComponent, DashboardListComponent, DashboardDetailComponent, MessageComponent
@@ -16,7 +18,8 @@ import { MessageRoutingModule } from './message-routing-module';
     CommonModule,
     MessageRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot()
   ]
 })
 export class MessageModule { }
