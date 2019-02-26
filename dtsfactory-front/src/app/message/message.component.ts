@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { ApiService } from '../api.service';
 import { Subject } from '../subject';
 import { Message } from '../message';
+import 'hammerjs';
 
 @Component({
   selector: 'app-message',
